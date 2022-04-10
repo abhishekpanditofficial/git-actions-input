@@ -1,0 +1,11 @@
+name: 'Git Actions Inputs'
+description: 'Accepting inputs in node file from git actions'
+inputs:
+  domainName:  # domain name as a normal input
+    description: 'repo name of the lambda function'
+    required: true
+
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

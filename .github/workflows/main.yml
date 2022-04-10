@@ -1,0 +1,21 @@
+name: Git Actions Inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain_name:
+        required: true
+        default: 'test.domain.com'
+        description: enter domain name
+  
+
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./
+      with:
+        domainName: ${{ github.event.inputs.domain_name }}
